@@ -1,0 +1,923 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\use_default_options true
+\maintain_unincluded_children no
+\language british
+\language_package babel
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command biber
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine biblatex
+\cite_engine_type authoryear
+\biblio_style plain
+\biblatex_bibstyle authoryear
+\biblatex_citestyle authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip halfline
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 1
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\SpecialChar LaTeX
+ for Intermediates
+\end_layout
+
+\begin_layout Subtitle
+Recapping the Basics
+\end_layout
+
+\begin_layout Author
+Elisabeth Maria Magin
+\end_layout
+
+\begin_layout Date
+09.12.202
+\end_layout
+
+\begin_layout Abstract
+This document is an active demonstration and learning document.
+ It recaps the basics of using the application and graphical user interface \SpecialChar LyX
+ to create \SpecialChar LaTeX
+ documents from the introductory course \SpecialChar LaTeX
+ Light:
+ Introduction to \SpecialChar LyX
+ and provides examples and more in-depth information about both the philosophy behind \SpecialChar LaTeX
+ and the \SpecialChar LyX
+ application.
+\end_layout
+
+\begin_layout Abstract
+The examples in here are all practical examples of the introductory course's content and this document refers to the course book and the relevant page numbers regularly.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Divorcing content from appearance
+\end_layout
+
+\begin_layout Standard
+Unlike word editors,
+ \SpecialChar LaTeX
+ and \SpecialChar LyX
+ separate content from appearance 
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "1--4"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+.
+ In practice,
+ that means that:
+\end_layout
+
+\begin_layout Enumerate
+What you can see on the 
+\series bold
+screen
+\series default
+ as you type does 
+\series bold
+not
+\series default
+ look like the document you will 
+\series bold
+print
+\series default
+ at the end.
+\end_layout
+
+\begin_layout Enumerate
+How your 
+\series bold
+printed
+\series default
+ document looks like is determined by a range of 
+\series bold
+settings
+\series default
+ that apply to your document 
+\series bold
+as a whole.
+\end_layout
+
+\begin_layout Enumerate
+The look of your 
+\series bold
+printed
+\series default
+ document is changed by adjusting those settings at the 
+\begin_inset Quotes xld
+\end_inset
+
+global
+\begin_inset Quotes xrd
+\end_inset
+
+ level,
+ for example page margins,
+ font and font sizes or settings for the bibliography.
+ They are always applied to the document as a 
+\series bold
+whole.
+\end_layout
+
+\begin_layout Enumerate
+Settings at the global level control the appearance of 
+\series bold
+structural elements
+\series default
+ of your text,
+ such as (sub)headings,
+ bibliographic references,
+ the language that will be used to automatically add specific bits of text such as captions for illustrations and tables
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+English 
+\begin_inset Quotes xld
+\end_inset
+
+Figure
+\begin_inset Quotes xrd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+German 
+\begin_inset Quotes xld
+\end_inset
+
+Abbildung
+\begin_inset Quotes xrd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Norwegian 
+\begin_inset Quotes xld
+\end_inset
+
+Figur
+\begin_inset Quotes xrd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ or even quotation marks.
+ Thus,
+ your main job is to ensure that you mark the structural elements of your text properly and leave the 
+\series bold
+layouting
+\series default
+ to the computer.
+\end_layout
+
+\begin_layout Standard
+Behind this divorce of content (your text) and appearance (the printout) is the observation that the contents of your text won't change,
+ regardless of whether they're printed with 1,
+ 2 or 3cm wide page margins,
+ using Times New Roman or Arial,
+ or whether your bibliography style is Chicago or Vancouver.
+ However,
+ the contents of your text need to be 
+\series bold
+consistently layouted
+\series default
+ according to their 
+\series bold
+structural purpose
+\series default
+ in the output.
+ This consistency in the layout can be 
+\series bold
+automated
+\series default
+ by telling your computer which 
+\series bold
+purpose
+\series default
+ a piece of text has in your document – for example a section or a bibliographic reference – and then telling your computer via the 
+\series bold
+settings
+\series default
+ how all pieces of text with this specific purpose should be layouted.
+\end_layout
+
+\begin_layout Standard
+Thus,
+ if you need to apply changes later on – change the font or the bibliography style for the whole document – all it requires is a change of the 
+\series bold
+settings
+\series default
+ instead of an arduous manual process where you change everything by hand.
+\end_layout
+
+\begin_layout Standard
+Lists,
+ figures,
+ tables,
+ quotes,
+ pieces of code and other insertions like boxes or abstracts are considered 
+\series bold
+local
+\series default
+ environments.
+ They occur at 
+\series bold
+specific locations
+\series default
+ in your document and their appearance and placement is largely controlled by the 
+\series bold
+global
+\series default
+ settings.
+\end_layout
+
+\begin_layout Standard
+Where more fine-grained stylistic changes are required,
+ for example to mark up 
+\series bold
+selected
+\series default
+ parts of the text as boldface,
+ italics or with colours for emphasis,
+ these instances are also considered as 
+\begin_inset Quotes xld
+\end_inset
+
+local
+\begin_inset Quotes xrd
+\end_inset
+
+ environments.
+ Changes in the 
+\series bold
+global
+\series default
+ settings 
+\series bold
+will
+\series default
+ affect them (for example changing the font of the whole document),
+ but if you change a 
+\series bold
+local
+\series default
+ environment (like removing the italics),
+ it will 
+\series bold
+not
+\series default
+ affect the rest of the document,
+ because a local environment is always nested into the global environment.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Because of this divorce between content and appearance,
+ documents written with \SpecialChar LyX
+/\SpecialChar LaTeX
+ need to be 
+\series bold
+processed
+\series default
+ to acquire a 
+\series bold
+printable
+\series default
+ document.
+\end_layout
+
+\begin_layout Plain Layout
+Processing/compiling the document means 
+\series bold
+telling
+\series default
+ the computer to take your document,
+ 
+\series bold
+layout
+\series default
+ it according to the 
+\series bold
+settings
+\series default
+ you specified and 
+\series bold
+produce
+\series default
+ a printable 
+\series bold
+output
+\series default
+ document.
+ Every time you change the settings,
+ either at the global or local level,
+ your document needs to be 
+\series bold
+reprocessed
+\series default
+ to apply the 
+\series bold
+changes
+\series default
+ in layout.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Global environments/settings
+\end_layout
+
+\begin_layout Standard
+Settings that apply to your document as a whole are:
+\end_layout
+
+\begin_layout Enumerate
+the 
+\series bold
+type
+\series default
+ of document you're writing (article,
+ letter,
+ book,
+ report,
+ presentation,
+ …) 
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "11--15"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+the 
+\series bold
+language
+\series default
+ of the document 
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "37f., 38"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+the 
+\series bold
+page
+\series default
+ layout 
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "32"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+ and margins 
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "33"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+the 
+\series bold
+text
+\series default
+ layout 
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "35--36"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+the 
+\series bold
+font
+\series default
+ settings 
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "34f."
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+All of these settings can be found and adjusted in the \SpecialChar LyX
+ GUI via the 
+\emph on
+Document
+\emph default
+ menu under 
+\emph on
+Settings
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection*
+Can you explain?
+\end_layout
+
+\begin_layout Enumerate
+What a 
+\begin_inset Quotes xld
+\end_inset
+
+document class
+\begin_inset Quotes xrd
+\end_inset
+
+ is?
+\end_layout
+
+\begin_layout Enumerate
+Which structural elements exist in a 
+\begin_inset Quotes xld
+\end_inset
+
+book
+\begin_inset Quotes xrd
+\end_inset
+
+,
+ but not in an 
+\begin_inset Quotes xld
+\end_inset
+
+article
+\begin_inset Quotes xrd
+\end_inset
+
+,
+ and why?
+\end_layout
+
+\begin_layout Enumerate
+How you can remove the horizontal indent in the first line of every paragraph and replace it with a vertical space between two paragraphs instead?
+\end_layout
+
+\begin_layout Enumerate
+Why the font you can see on the screen of your computer does not change when you change the document font in the font settings tab?
+\end_layout
+
+\begin_layout Section
+Local environments/settings
+\end_layout
+
+\begin_layout Standard
+Localised environments are used to inform the computer that here are specific bits and pieces of text that serve a specific purpose and thus need to be layouted in a particular way.
+ Some localised environments occur many times in a document – like (sub)headings,
+ lists or tables – while others only apply to one specific word – like an italicised term 
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "40--42"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+.
+ 
+\series bold
+All
+\series default
+ local environments share that they take basic layouting instructions from the global settings;
+ the caption of an illustration 
+\series bold
+will
+\series default
+ use the basic document font just the same as a table unless specified otherwise.
+ Emphasised text,
+ whether that is italics,
+ boldface or colours,
+ are added 
+\series bold
+on top
+\series default
+ of those global layouting instructions.
+ Thus,
+ when you change the document font from Times New Roman to Arial,
+ you won't lose your italics,
+ they will simply appear as italicised text in Arial now.
+\end_layout
+
+\begin_layout Standard
+Local environments such as lists,
+ quotes,
+ footnotes,
+ citations etc.
+ also are controlled by their own global,
+ environment-dependant settings.
+ Footnotes are,
+ for example,
+ usually printed in a smaller font and at the bottom of the page.
+ In your \SpecialChar LyX
+ document,
+ however,
+ you can see them on the screen where the 
+\begin_inset Quotes xld
+\end_inset
+
+footnotemark
+\begin_inset Quotes xrd
+\end_inset
+
+ (the little number or sign used to identify the footnote) will appear in the printed document.
+ You 
+\emph on
+can
+\emph default
+ change the font size for a footnote manually,
+ but you 
+\emph on
+should not
+\emph default
+.
+ Instead,
+ you should change the font size for footnotes 
+\series bold
+globally,
+ unless
+\series default
+ the change of font size really 
+\emph on
+only
+\emph default
+ applies to that one single footnote.
+\end_layout
+
+\begin_layout Standard
+In \SpecialChar LyX
+,
+ most local environments can be added either by using the buttons in the toolbar or by way of the 
+\emph on
+Insert
+\emph default
+ menu.
+\end_layout
+
+\begin_layout Subsection*
+Can you explain?
+\end_layout
+
+\begin_layout Enumerate
+How to add title,
+ author and date to your document?
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "22, 24"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How to 
+\emph on
+remove
+\emph default
+ the date entirely from your document?
+\end_layout
+
+\begin_layout Enumerate
+How to divide your document into different sections by using chapters,
+ sections and subsections?
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "23--27"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How to add a table of contents to your document?
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "29"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How to add an abstract to your article?
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "24"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How to add a footnote?
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "73"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How to add a link to an email or a website?
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "69"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Special local environments:
+ Floats
+\end_layout
+
+\begin_layout Standard
+Lists,
+ quotes and citations are 
+\series bold
+fixed
+\series default
+ local environments.
+ They are supposed to appear in the text exactly where you put them.
+ 
+\begin_inset Quotes xld
+\end_inset
+
+Floats
+\begin_inset Quotes xrd
+\end_inset
+
+ are,
+ as the name implies,
+ local environments that do 
+\series bold
+not
+\series default
+ have a fixed placement,
+ mostly tables and figures.
+ This has typographic reasons.
+ \SpecialChar LaTeX
+ calculates the text flow and tries to distribute sections and body text in paragraphs in a way that makes it easy to read for a human.
+ Tables and figures do not always fit well into the rest of the text where they are mentioned 
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+after "44"
+key "latexlightcoursebook2025magin"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "C:/Users/elismari/01-Arbeit/01-bibliothek/academiclibrary"
+options "bibtotoc"
+encoding "default"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
