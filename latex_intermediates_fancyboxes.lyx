@@ -1,0 +1,715 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\options most, svgnames
+\use_default_options true
+\begin_modules
+tcolorbox
+\end_modules
+\maintain_unincluded_children no
+\language british
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip halfline
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 1
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\SpecialChar LaTeX
+ for Intermediates
+\end_layout
+
+\begin_layout Subtitle
+Fancy Coloured Boxes
+\end_layout
+
+\begin_layout Author
+Elisabeth Maria Magin
+\end_layout
+
+\begin_layout Date
+09.12.2025
+\end_layout
+
+\begin_layout Abstract
+This document is an active demonstration and learning document showing how to create fancy coloured boxes using \SpecialChar LaTeX
+ and the \SpecialChar LyX
+ user interface.
+\end_layout
+
+\begin_layout Section
+Loading additional \SpecialChar LaTeX
+ packages via 
+\emph on
+Modules
+\end_layout
+
+\begin_layout Standard
+\SpecialChar LaTeX
+ has hundreds of extensions built for specific purposes,
+ for example creating knitting patterns – or providing the opportunity to create fancy coloured boxes within the text for the purposes of information,
+ enhancement,
+ structuring etc.
+ But not all of them are built into \SpecialChar LyX
+ as well,
+ but thankfully,
+ the 
+\begin_inset CommandInset href
+LatexCommand href
+name "tcolorbox package"
+target "https://ctan.org/pkg/tcolorbox"
+literal "false"
+
+\end_inset
+
+ is.
+\end_layout
+
+\begin_layout Standard
+In \SpecialChar LyX
+,
+ additional packages that aren't called automatically via the document class or any other settings you have set via 
+\emph on
+Document > Settings
+\emph default
+ are referred to as 
+\begin_inset Quotes xld
+\end_inset
+
+modules
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ You can choose to load the ones \SpecialChar LyX
+ supports via the GUI in the same dialogue:
+ 
+\emph on
+Document > Settings > Modules.
+
+\emph default
+ How they are called may depend on the language of your interface;
+ in the English GUI,
+ you're looking for 
+\begin_inset Quotes xld
+\end_inset
+
+Fancy Colored Boxes
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ This adds the tcolorbox package to your document.
+\end_layout
+
+\begin_layout Standard
+Additionally,
+ you also need to declare which of the (many) different features the package offers you are going to use.
+ Under 
+\emph on
+Document > Settings > Document Class > Class Options,
+
+\emph default
+ add 
+\begin_inset Quotes xld
+\end_inset
+
+most
+\begin_inset Quotes xrd
+\end_inset
+
+ in the empty field and save it;
+ this will load most of the tcolorbox package's features and is usually sufficient for most users.
+\end_layout
+
+\begin_layout Section
+Picking fancy colours
+\end_layout
+
+\begin_layout Standard
+As explained in the introductory course,
+ \SpecialChar LaTeX
+ has by default defined 21 colours you can use.
+ A lot more colours are available via the 
+\begin_inset CommandInset href
+LatexCommand href
+name "xcolor package"
+target "https://ctan.org/pkg/xcolor"
+literal "false"
+
+\end_inset
+
+.
+ This package gives you three options,
+ which unlock more and more different colours,
+ in ascending order:
+ dvipsnames,
+ svgnames and x11name.
+\end_layout
+
+\begin_layout Standard
+\SpecialChar LyX
+ loads the xcolor package by default for every new document you create,
+ but restricts colours to the basic ones unless instructed other.
+ In the same field where you have already added 
+\begin_inset Quotes xld
+\end_inset
+
+most
+\begin_inset Quotes xrd
+\end_inset
+
+ in the preceding step,
+ add a comma and then 
+\series bold
+either
+\series default
+ 
+\begin_inset Quotes xld
+\end_inset
+
+dvipsnames
+\begin_inset Quotes xrd
+\end_inset
+
+ 
+\series bold
+or
+\series default
+ 
+\begin_inset Quotes xld
+\end_inset
+
+svgnames
+\begin_inset Quotes xrd
+\end_inset
+
+ 
+\series bold
+or
+\series default
+ 
+\begin_inset Quotes xld
+\end_inset
+
+x11names
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ Do 
+\series bold
+not
+\series default
+ enter more than one of those,
+ it will cause option clashes.
+ If you change the chosen scheme,
+ a colour you had chosen before might not be available anymore,
+ so if you compile your document and get an error message,
+ check the colour names first before you do anything else.
+\end_layout
+
+\begin_layout Section
+Designing a new fancy coloured box
+\end_layout
+
+\begin_layout Standard
+tcolorbox allows users to define their own custom coloured boxes via code,
+ as many as they like.
+ This is also possible in \SpecialChar LyX
+,
+ but requires actual code to be written.
+ \SpecialChar LyX
+ therefore also offers the option to make use of the predefined 5 custom coloured boxes which you can find in 
+\emph on
+Insert > Custom Inset.
+\end_layout
+
+\begin_layout Standard
+To define a new colour box
+\end_layout
+
+\begin_layout Enumerate
+open the environment dropdown menu;
+\end_layout
+
+\begin_layout Enumerate
+click on 
+\begin_inset Quotes xld
+\end_inset
+
+New Color Box Type
+\begin_inset Quotes xrd
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+choose which box you want to define:
+ 
+\begin_inset Quotes xld
+\end_inset
+
+Custom Color Box 1
+\begin_inset Quotes xrd
+\end_inset
+
+ is called 
+\begin_inset Quotes xld
+\end_inset
+
+cBoxA
+\begin_inset Quotes xrd
+\end_inset
+
+,
+ 2 is B,
+ 3 is C,
+ 4 is D and 5 is E.
+ You can only define each box once!
+\end_layout
+
+\begin_layout Enumerate
+Put the cursor right after the red box labelled 
+\begin_inset Quotes xld
+\end_inset
+
+Name
+\begin_inset Quotes xrd
+\end_inset
+
+ that should contain 
+\begin_inset Quotes xld
+\end_inset
+
+cBoxA-E
+\begin_inset Quotes xrd
+\end_inset
+
+,
+ then click on the 
+\emph on
+Insert
+\emph default
+ menu and 
+\emph on
+Arguments.
+
+\emph default
+ Leave the box empty for now.
+\end_layout
+
+\begin_layout Enumerate
+Put the cursor right after that red box and add 
+\begin_inset Quotes xld
+\end_inset
+
+Default Value
+\begin_inset Quotes xrd
+\end_inset
+
+ from the 
+\emph on
+Insert
+\emph default
+ menu.
+ Leave the box empty.
+\end_layout
+
+\begin_layout Subsection
+Arguments and options
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+Arguments
+\emph default
+ box takes a numeric value starting from 1.
+ These 
+\begin_inset Quotes xld
+\end_inset
+
+arguments
+\begin_inset Quotes xrd
+\end_inset
+
+ are customisable for every single box by itself.
+ For example,
+ you want to use the same type of box for different exercises,
+ but every exercise has a different title.
+ In this case,
+ you add 
+\begin_inset Quotes xld
+\end_inset
+
+1
+\begin_inset Quotes xrd
+\end_inset
+
+ in the red box to the right of 
+\emph on
+Arguments.
+
+\emph default
+ This will later on allow you to customise the title for each box,
+ even if they all look the same.
+\end_layout
+
+\begin_layout Standard
+Then you need to decide what your fancy coloured box should look like.
+ First,
+ simply add 
+\begin_inset Quotes xld
+\end_inset
+
+enhanced
+\begin_inset Quotes xrd
+\end_inset
+
+ right after the empty box for 
+\emph on
+Default Value.
+
+\emph default
+ Now,
+ you can specify what your box should look like.
+ Remember to add a comma after every option you add.
+\end_layout
+
+\begin_layout New Color Box Type
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+
+cBoxA
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+
+1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+enhanced,
+ colframe = DeepSkyBlue,
+ colback = White,
+ coltext = SeaGreen,
+ coltitle = magenta,
+ valign = bottom,
+ halign = left,
+ #1
+\end_layout
+
+\begin_layout Enumerate
+Change the frame colour with 
+\begin_inset Quotes xld
+\end_inset
+
+colframe = colour of your choice from the list of colours offered by dvipsnames,
+ svgnames or x11names
+\begin_inset Quotes xrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Change the background colour of the box with 
+\begin_inset Quotes xld
+\end_inset
+
+colback = colour of your choice
+\begin_inset Quotes xrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Choose the alignment of the text in your box with 
+\begin_inset Quotes xld
+\end_inset
+
+valign = top/center/bottom
+\begin_inset Quotes xrd
+\end_inset
+
+ and 
+\begin_inset Quotes xld
+\end_inset
+
+halign = left/center/right
+\begin_inset Quotes xrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Change the colour of the text in the box with 
+\begin_inset Quotes xld
+\end_inset
+
+coltext = colour of your choice
+\begin_inset Quotes xrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Change the colour of the title with 
+\begin_inset Quotes xld
+\end_inset
+
+coltitle = colour of your choice
+\begin_inset Quotes xrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Choose whether your box should break when it reaches a page break by adding 
+\begin_inset Quotes xld
+\end_inset
+
+breakable
+\begin_inset Quotes xrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Lastly,
+ add another comma and #1 for your one argument.
+\end_layout
+
+\begin_layout Section
+Using coloured boxes in the document
+\end_layout
+
+\begin_layout Standard
+To add a new coloured box to your document,
+ go to 
+\emph on
+Insert > Custom Inset
+\emph default
+ and choose the right box (remember:
+ 1= A,
+ 2 = B etc.).
+\end_layout
+
+\begin_layout Standard
+If you want to add a title,
+ put the cursor into the red Custom Color Box and click on 
+\emph on
+Insert > Color Box Options.
+
+\emph default
+ Put your cursor inside that box and type 
+\begin_inset Quotes xld
+\end_inset
+
+title = {Title of your choice}
+\begin_inset Quotes xrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Put the cursor outside of that red box,
+ but keep it inside the Custom Color Box.
+ Press Enter and start typing what you want in that box.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Custom Color Box 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+title = {This is a custom title for my coloured box}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+This is text I want to have in my coloured box.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Compile your document and enjoy your fancy coloured box!
+\end_layout
+
+\begin_layout Section
+Additional customisation
+\end_layout
+
+\begin_layout Standard
+The tcolorbox package is incredibly diverse.
+ \SpecialChar LyX
+ has a whole document on how to do more customisation in its Help section.
+ Open that document now and skim through the document,
+ then try to customise two more boxes,
+ B and C,
+ according to your preferences and needs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement b
+alignment center
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Custom Color Box 1
+status open
+
+\begin_layout Plain Layout
+Here is a floating box without a title that appears at the bottom of the page!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
