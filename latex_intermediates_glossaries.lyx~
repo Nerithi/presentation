@@ -1,0 +1,987 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+\usepackage[automake,acronym,shortcuts,toc]{glossaries}
+
+\makeglossaries
+
+\loadglsentries{glossaryfile}
+\end_preamble
+\use_default_options true
+\begin_modules
+tcolorbox
+\end_modules
+\maintain_unincluded_children no
+\language british
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command xindy
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip halfline
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 1
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\SpecialChar LaTeX
+ for Intermediates
+\end_layout
+
+\begin_layout Subtitle
+Glossaries and Index
+\end_layout
+
+\begin_layout Author
+Elisabeth Maria Magin
+\end_layout
+
+\begin_layout Date
+09.12.2025
+\end_layout
+
+\begin_layout Abstract
+This document is an active demonstration and learning document showing how to create a combined index and glossary using \SpecialChar LaTeX
+ and the \SpecialChar LyX
+ user interface.
+ The package used for this purpose is the 
+\begin_inset CommandInset href
+LatexCommand href
+name "glossaries package"
+target "https://ctan.org/pkg/glossaries"
+literal "false"
+
+\end_inset
+
+,
+ which requires the use of code in the \SpecialChar LyX
+ document.
+\end_layout
+
+\begin_layout Section
+Loading additional \SpecialChar LaTeX
+ packages via the preamble
+\end_layout
+
+\begin_layout Standard
+Unlike the nomenclature package,
+ which also provides glossary features,
+ the glossaries package has not been integrated into \SpecialChar LyX
+ yet.
+ This means that the package cannot be chosen and loaded by choosing a module,
+ but needs to be added to the preamble via 
+\emph on
+Document > Settings > LaTeX Preamble.
+
+\emph default
+ Adding 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+usepackage{glossaries}
+\begin_inset Quotes xrd
+\end_inset
+
+ activates the package.
+\end_layout
+
+\begin_layout Section
+Setting options for the glossaries package
+\end_layout
+
+\begin_layout Standard
+glossaries is an extensive,
+ very versatile package with features that vastly exceed what the nomenclature package can offer.
+ With it not being part of \SpecialChar LyX
+ yet,
+ several options for it need to be set manually.
+ In the preamble,
+ add [automake,
+ acronym,
+ shortcuts,
+ toc] to the 
+\backslash
+usepackage command:
+ 
+\backslash
+usepackage[automake,
+ acronym,
+ shortcuts,
+ toc]{glossaries}.
+ The first is required to automatically run background processes that create your glossary,
+ while 
+\begin_inset Quotes xld
+\end_inset
+
+acronym
+\begin_inset Quotes xrd
+\end_inset
+
+ allows you to create extensible acronyms in addition to glossary entries,
+ 
+\begin_inset Quotes xld
+\end_inset
+
+shortcuts
+\begin_inset Quotes xrd
+\end_inset
+
+ permits the use of shorter commands in the text and 
+\begin_inset Quotes xld
+\end_inset
+
+toc
+\begin_inset Quotes xrd
+\end_inset
+
+ automatically adds a table of contents-entry for your glossary.
+ You can remove the latter three if you don't need them,
+ 
+\begin_inset Quotes xld
+\end_inset
+
+automake
+\begin_inset Quotes xrd
+\end_inset
+
+ is required at least in \SpecialChar LyX
+ for glossaries to work properly.
+\end_layout
+
+\begin_layout Standard
+Secondly,
+ you need to instruct the computer to create a glossary by adding 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+makeglossaries
+\begin_inset Quotes xrd
+\end_inset
+
+ in the preamble below the 
+\backslash
+usepackage{glossaries} command.
+\end_layout
+
+\begin_layout Standard
+You further need to move to the 
+\emph on
+Indexes
+\emph default
+ tab in your document settings and choose 
+\begin_inset Quotes xld
+\end_inset
+
+makeindex
+\begin_inset Quotes xrd
+\end_inset
+
+ or 
+\begin_inset Quotes xld
+\end_inset
+
+xindy
+\begin_inset Quotes xrd
+\end_inset
+
+ as 
+\emph on
+Index Generation.
+
+\emph default
+ Both are compatible with the glossaries package.
+\end_layout
+
+\begin_layout Section
+Creating and adding your glossary file
+\end_layout
+
+\begin_layout Standard
+Because this isn't a package build into \SpecialChar LyX
+ yet,
+ you need to create your glossary file as a .tex-file and load it via the preamble.
+ The command is 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+loadglsentries{path/to/your/file}
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ Add it below 
+\backslash
+makeglossaries in the 
+\emph on
+LaTeX Preamble
+\emph default
+ tab.
+ If you keep your glossary file in the same directory as your \SpecialChar LyX
+ document,
+ you don't need to add a path,
+ you simply add the file name 
+\series bold
+without
+\series default
+ the file extension.
+\end_layout
+
+\begin_layout Standard
+To create your glossary file,
+ open a text editor (Notepad++,
+ VS Code,
+ KATE) and save the document in the same folder as your \SpecialChar LyX
+ document,
+ with a name like 
+\begin_inset Quotes xld
+\end_inset
+
+glossaryfile
+\begin_inset Quotes xrd
+\end_inset
+
+ and the extension 
+\begin_inset Quotes xld
+\end_inset
+
+tex
+\begin_inset Quotes xrd
+\end_inset
+
+:
+ glossaryfile.tex.
+\end_layout
+
+\begin_layout Subsection
+Creating a glossary entry
+\end_layout
+
+\begin_layout Standard
+Now you can move on to creating a new glossary entry.
+ The minimum information the system needs is a keyword that calls the entry,
+ the name and a description,
+ for example 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+newglossaryentry{glossary}{name={glossary},
+ description={A list and explanation of relevant terms,
+ usually used in scientific publications,
+ where not everyone may be equally familiar with the terms}}
+\begin_inset Quotes xrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The command syntax itself is 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+newglossaryentry{}{}.
+ The first pair of curly brackets contains the 
+\series bold
+label
+\series default
+ by which you refer to the glossary term – in the above example,
+ that term is 
+\begin_inset Quotes xld
+\end_inset
+
+glossary
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ The second pair of curly brackets wraps around the basic required information:
+ the 
+\series bold
+name
+\series default
+ that appears when you call the glossary item in your text,
+ and the 
+\series bold
+description
+\series default
+ that will appear in your glossary at the end of the file.
+ These are,
+ respectively,
+ entered with 
+\begin_inset Quotes xld
+\end_inset
+
+name = {}
+\begin_inset Quotes xrd
+\end_inset
+
+ and 
+\begin_inset Quotes xld
+\end_inset
+
+description = {}
+\begin_inset Quotes xrd
+\end_inset
+
+,
+ separated by a comma.
+ Note that the 
+\series bold
+second
+\series default
+ closing curly bracket 
+\series bold
+always
+\series default
+ comes 
+\series bold
+after
+\series default
+ the closing curly bracket that wraps the description:
+ 
+\backslash
+newglossaryentry{}{name={},
+ description={}}
+\end_layout
+
+\begin_layout Standard
+The glossaries package can automatically create a plural of your term by adding -s to the end of the 
+\series bold
+name
+\series default
+.
+ If your term's plural is 
+\series bold
+not
+\series default
+ created by adding -s,
+ you need to specify the plural form,
+ as is the case for 
+\begin_inset Quotes xld
+\end_inset
+
+glossary
+\begin_inset Quotes xrd
+\end_inset
+
+,
+ where the plural is 
+\begin_inset Quotes xld
+\end_inset
+
+glossaries
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ You do this by adding 
+\begin_inset Quotes xld
+\end_inset
+
+plural = {glossaries}
+\begin_inset Quotes xrd
+\end_inset
+
+ in the second pair of curly brackets,
+ between 
+\series bold
+name
+\series default
+ and 
+\series bold
+description:
+
+\series default
+ 
+\backslash
+newglossaryentry{glossary}{name={glossary},
+ 
+\series bold
+plural={glossaries},
+
+\series default
+ description={A list and explanation of relevant terms,
+ usually used in scientific publications,
+ where not everyone may be equally familiar with the terms}}
+\end_layout
+
+\begin_layout Subsection
+Creating an acronym entry
+\end_layout
+
+\begin_layout Standard
+With glossaries,
+ you can also use acronyms which can automatically be shortened and extended as you wish.
+ The syntax to create a new acronym entry is 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+newacronym{}{}{}
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ The first curly bracket again contains the 
+\series bold
+label
+\series default
+ – in this case,
+ we'll be using 
+\begin_inset Quotes xld
+\end_inset
+
+MP
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ The second curly bracket contains the 
+\series bold
+acronym,
+
+\series default
+ which in this case will also be 
+\begin_inset Quotes xld
+\end_inset
+
+MP
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ The third curly bracket contains the 
+\series bold
+term
+\series default
+ that is abbreviated by the acronym,
+ 
+\begin_inset Quotes xld
+\end_inset
+
+Member of Parliament
+\begin_inset Quotes xrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Again,
+ the glossaries package automatically extends acronyms into plural forms by attaching an -s.
+ In this case,
+ this is only correct for the short form – the plural of 
+\begin_inset Quotes xld
+\end_inset
+
+MP
+\begin_inset Quotes xrd
+\end_inset
+
+ is 
+\begin_inset Quotes xld
+\end_inset
+
+MPs
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ It is not correct for the term:
+ 
+\begin_inset Quotes xld
+\end_inset
+
+Member of Parliaments
+\begin_inset Quotes xrd
+\end_inset
+
+ is not the correct plural for 
+\begin_inset Quotes xld
+\end_inset
+
+Member of Parliament
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ Therefore the correct plural again needs to be defined by adding 
+\series bold
+optional
+\series default
+ information in [] between 
+\backslash
+newacronym and the three curly braces:
+ [longplural = {Members of Parliament}].
+\end_layout
+
+\begin_layout Standard
+This will give us the complete entry as 
+\backslash
+newglossaryentry[longplural = {Members of Parliament}]{mp}{MP}{Member of Parliament}
+\end_layout
+
+\begin_layout Standard
+Analogue to this,
+ if the acronym's plural is different,
+ this can be set by adding 
+\begin_inset Quotes xld
+\end_inset
+
+shortplural = {correct plural of the acronym}
+\begin_inset Quotes xrd
+\end_inset
+
+ inside the [].
+ If both the short and the long plural need to be defined,
+ remember to separate the two definitions by a 
+\series bold
+comma
+\series default
+.
+\end_layout
+
+\begin_layout Section
+Adding terms into your text
+\end_layout
+
+\begin_layout Standard
+To use the glossary entries in your LyX document,
+ you need to use Evil Red Boxes,
+ a.k.a.
+ actual \SpecialChar LaTeX
+ code.
+ Acronyms are always automatically extended on first appearance in the text,
+ with the acronym added in brackets after the full term.
+\end_layout
+
+\begin_layout Itemize
+a linked glossary term in the text:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gls{latex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+a linked glossary term in the plural in the text:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+glspl{glossary}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+a linked acronym on the first occurrence:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{mp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+a linked acronym on the second occurrence:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{mp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+a linked acronym plural:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acp{mp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+a linked acronym spelled out:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{mp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+a linked acronym plural spelled out:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+aclp{mp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Terms are capitalised by capitalising the first letter of the command:
+ 
+\backslash
+Gls,
+ 
+\backslash
+Glspl,
+ 
+\backslash
+Ac,
+ 
+\backslash
+Acp,
+ 
+\backslash
+Acl,
+ 
+\backslash
+Aclp.
+ They can also be capitalised entirely by using 
+\backslash
+GLS,
+ 
+\backslash
+AC etc.
+\end_layout
+
+\begin_layout Standard
+If you added the 
+\begin_inset Quotes xld
+\end_inset
+
+shortcuts
+\begin_inset Quotes xrd
+\end_inset
+
+ option when you called the glossaries package,
+ you can use 
+\backslash
+ac instead of 
+\backslash
+gls,
+ 
+\backslash
+acp instead of 
+\backslash
+glspl,
+ etc.,
+ which makes typing a little less cumbersome.
+\end_layout
+
+\begin_layout Standard
+If you need to 
+\series bold
+change
+\series default
+ your term,
+ you 
+\series bold
+always
+\series default
+ change the glossary entry in glossaryfile.tex,
+ 
+\series bold
+never
+\series default
+ the label.
+ For example,
+ if you need to change 
+\begin_inset Quotes xld
+\end_inset
+
+Member of Parliament
+\begin_inset Quotes xrd
+\end_inset
+
+ into 
+\begin_inset Quotes xld
+\end_inset
+
+Member of Stortinget
+\begin_inset Quotes xrd
+\end_inset
+
+,
+ you only change the 
+\series bold
+relevant parts
+\series default
+ in the glossary entry:
+ 
+\backslash
+newacronym[longplural={Members of 
+\series bold
+Stortinget
+\series default
+}]{mp}{M
+\series bold
+S
+\series default
+}{Member of 
+\series bold
+Stortinget
+\series default
+}
+\end_layout
+
+\begin_layout Standard
+On recompilation,
+ your entries in the text and the glossary will be automatically updated.
+\end_layout
+
+\begin_layout Section
+Printing your glossary
+\end_layout
+
+\begin_layout Standard
+Finally,
+ you need to print your glossary.
+ Again this needs to be done with a Evil Red Text.
+ Add 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+printglossary
+\begin_inset Quotes xrd
+\end_inset
+
+ in your text where you want your glossary to be printed.
+ You can also optionally change the title:
+ 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+printglossary[title = {New title}
+\begin_inset Quotes xrd
+\end_inset
+
+ will use the text in the curly brackets as the heading for the glossary.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+printglossary[type = main,title = {Glossar}]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To print your acronyms,
+ add 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+printglossary[type = acronym]
+\begin_inset Quotes xrd
+\end_inset
+
+ to your document where you want the list to be printed.
+ Again,
+ you can change the title if you prefer:
+ 
+\begin_inset Quotes xld
+\end_inset
+
+
+\backslash
+printglossary[type = acronym,
+ title = {My list of acronyms}
+\begin_inset Quotes xrd
+\end_inset
+
+ will change it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+printglossary[type = acronym]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
